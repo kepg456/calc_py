@@ -9,7 +9,7 @@ ventana.config(width=550,height=550,background="white")
 
 
 def click_boton():
-    texto = Label(text="boton presionado")
+    texto = Label(text="boton presionado hijo de puta")
     texto.place(x=0,y=0)
 xf=80
 yf=120

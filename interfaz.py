@@ -2,7 +2,7 @@ from ast import For
 from cgitb import text
 from tkinter import *
 from tkinter.font import BOLD
-
+import cv2
 
 ventana = Tk()
 ventana.title("calculadora")
@@ -41,4 +41,11 @@ for i in range(10):
         else:
             yf=yf+100
 """ aca terminan las teclas de los numeros"""
+
+imagen = cv2.imread("suma.png")
+imagen_suma = cv2.resize(imagen,(300,300))
+boton_suma = Button(image = imagen_suma)
+boton_suma.place(x=300,y=300)
+
+
 ventana.mainloop()

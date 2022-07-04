@@ -2,6 +2,7 @@ from tkinter import *
 
 from setuptools import Command
 
+raiz = Tk()
 botones = []
 
 def click(valor):
@@ -12,10 +13,9 @@ for i in range(10):
     botones.append(Button(text="hola mundo",command = lambda: click(i)))
 
 
-raiz = Tk()
+
 
 
 botones[3].place(y=40,x=0)
-
 
 raiz.mainloop()

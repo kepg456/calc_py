@@ -3,7 +3,7 @@ from cgitb import text
 from tkinter import *
 from tkinter.font import BOLD
 
-i=0
+lector=0
 ventana = Tk()
 ventana.title("calculadora")
 ventana.config(width=550,height=550,background="#614C47")
@@ -21,7 +21,9 @@ caja1.place(x=0,y=0)
 
 """definicion de la funcion de los botones"""
 def click_boton(valor):
-    caja1.insert(i,valor)
+    global lector
+    caja1.insert(lector,valor)
+    lector = lector + 1
 
 """imprimir botones en la ventana"""
 xf=80
@@ -31,8 +33,7 @@ numeros = []
 u=0
 for i in range(10):
     i=i+1
-    numeros[i-1] = Button(text=i-1,height=3,width=6,font=("Courier",13,BOLD),command=lambda: click_boton(i-1))
-    numeros[i-1].place(x=xf,y=yf)
+    numeros.append(Button(text=i-1,height=3,width=6,font=("Courier",13,BOLD)).place(x=xf,y=yf))
     u = u + 1
     xf= xf + 100
     if(xf>300):
@@ -43,11 +44,17 @@ for i in range(10):
             yf=yf+100
         else:
             yf=yf+100
+
+command= lambda x: print(x)
+
+
 """ aca terminan las teclas de los numeros"""
 
 
 def sumar():
-    caja1.insert(i,"+")
+    global lector
+    caja1.insert(lector,"+")
+    lector = lector + 1
 
 photo = PhotoImage(file="suma.png")
 photoimagen = photo.subsample(4,4)
